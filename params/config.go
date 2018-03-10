@@ -29,6 +29,7 @@ var (
 	TestnetGenesisHash = common.HexToHash("0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d")
 	EllaismGenesisHash = common.HexToHash("0x4d7df65052bb21264d6ad2d6fe2d5578a36be12f71bf8d0559b0c15c4dc539b5")
 	SocialGenesisHash  = common.HexToHash("0xba8314d5c2ebddaf58eb882b364b27cbfa4d3402dacd32b60986754ac25cfe8d")
+	EthersocialGenesisHash = common.HexToHash("0x310dd3c4ae84dd89f1b46cfdd5e26c8f904dfddddc73f323b468127272e20e9f")
 )
 
 var (
@@ -101,6 +102,22 @@ var (
 		ConstantinopleBlock: nil,
 		ECIP1017EraRounds:   big.NewInt(5000000),
 		EIP160Block:         big.NewInt(0),
+		Ethash:              new(EthashConfig),
+	}
+
+	// Ethersocial Mainnet chain parameters
+	EthersocialChainConfig = &ChainConfig{
+		ChainID:             big.NewInt(0),
+		HomesteadBlock:      big.NewInt(0),
+		DAOForkBlock:        big.NewInt(0),
+		DAOForkSupport:      false,
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.HexToHash("0x310dd3c4ae84dd89f1b46cfdd5e26c8f904dfddddc73f323b468127272e20e9f"),
+		EIP155Block:         big.NewInt(9000000),
+		EIP158Block:         big.NewInt(9000000),
+		ByzantiumBlock:      big.NewInt(600000),
+		DisposalBlock:       nil,
+		ConstantinopleBlock: nil,
 		Ethash:              new(EthashConfig),
 	}
 

@@ -68,6 +68,14 @@ var SocialBootnodes = []string{
 	"enode://851f14c5cc86cbc0a81acfcbe5dd99ad5c823435357219df736932c5f89ad4318f6973a553857a32d97a71793f5a35c062d46320be282aa0a80b06b9c6b624e4@13.125.232.71:30303",
 }
 
+// EthersocialBootnodes are the enode URLs of the P2P bootstrap nodes running on
+// the Ethersocial network.
+var EthersocialBootnodes = []string{
+	"enode://f2c298eee215cefa930b5280e665a38b2706be3120c302b9fcb48dc7d3ceba3a3e7bac354dccbbcbc3bfd177882b0d5498f36833dfcd5674225adb19dd04ec3a@52.231.74.146:50505",
+	"enode://7769cf0bdb7edd8dd95e590b46f950b9bd9625d681ec6123b31d3be58f1f1e0531d9811ccd9c1ad5d52a73999c6da2131943ca02666e238b1f265a1cc64dcae7@52.231.35.75:50505",
+	"enode://07c7baac71f398dce3fae3d75632eabf5c31b2d02fc37e2b1dd5f8ed5049ea74a7e91b311a60e72f77e0bba1943ef7ce14595ad6edde688d14223e7c9d82ee91@52.226.16.248:50505",
+}
+
 // TestnetBootnodes are the enode URLs of the P2P bootstrap nodes running on the
 // Ropsten test network.
 var TestnetBootnodes = []string{
