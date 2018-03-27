@@ -213,6 +213,8 @@ func (g *Genesis) configOrDefault(ghash common.Hash) *params.ChainConfig {
 		return params.MainnetChainConfig
 	case ghash == params.TestnetGenesisHash:
 		return params.TestnetChainConfig
+	case ghash == params.EllaismGenesisHash:
+		return params.EllaismChainConfig
 	default:
 		return params.AllEthashProtocolChanges
 	}
@@ -306,6 +308,18 @@ func DefaultGenesisBlock() *Genesis {
 		GasLimit:   5000,
 		Difficulty: big.NewInt(17179869184),
 		Alloc:      decodePrealloc(mainnetAllocData),
+	}
+}
+
+// EllaismGenesisBlock returns the Ellaism genesis block.
+func DefaultEllaismGenesisBlock() *Genesis {
+	return &Genesis {
+		Config:     params.EllaismChainConfig,
+		Nonce:      64,
+		ExtraData:  hexutil.MustDecode("0x0000000000000000000000000000000000000000000000000000000000000000"),
+		GasLimit:   5000,
+		Difficulty: big.NewInt(17179869184),
+		Alloc:      decodePrealloc(ellaismAllocData),
 	}
 }
 
