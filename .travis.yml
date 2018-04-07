@@ -19,12 +19,12 @@ matrix:
       deploy:
         provider: releases
         api_key:
-          secure: Aynh6/R/IRY1rJtfAbwn/yaMISVIYhfbZF0IlOtPUrLpMvmA9jTU7paPYG7bzluKSJwPiwIkdKzYfrkoaqZ1O0CCJzyQZ2EURfm3PPTI8gtVi9CRV0XYVfbKzpLmDmWVu8cJ1sJ5Js/9Vyg1FVBJTBVjjKJ/gXI7JOj+joZvsRSdQvHnR+lpxo0UPPbzXIlpb3I1Wputk3QTvBzihcIuHXy+TBWvvW3ZNNUAh8n552cIAUIAmhjhE18IifstjgfHF1oPqMgBOTVjmQcn8965RQWV+rTsuB76Z79syyns4EFAXFd4vQlMShfYCXKLGjKp9SAq3zNDvdUlMLo1t6leD0PDEAu6bZxKbor1Yhh/OBLAftaF5DuFpEU/bH/YTqWPa1YjIJzUULuD9hkj4dhOfDkHWEOZ7B+FoQeP7zZ6RD2Cw98U8MzsvLl3UoyDJNxC/bR8nCJSkQlezNsGnIlmlH+SoGwn+yVdtF5dC7SPo5qgCq0r/f0P2YAKhiqt6CcmEvbmH0jyMIu7nUB0YIwlK7vu+kauV0dAHYqIkP8qVVt0AcMtNinoGHLng34+dLNcA49z44duaX3nIdxjUh2EuQINdsWsK3/ewCaJkpQxX+pnmtaoOUB05eD+0twa9In7k0RjP4RBcjGR281g18EE6lBGIUhKq/uEoJOOT3WAaq4=
-        file: multi-geth-$TRAVIS_OS_NAME.*
+          secure: ezTmvpIS/KdiICZzKbEK9R8E8i0Vtey6p9qrLJZB9vbV4fFTHBrbixo7di71H2rtGrBDhWRZ9r0+6jxwcu/1JFvnNDfAanlzx7XOjbsbriLLJdCTytFVEa8G50U1I7lNRKGApwjoTNG0sL5u5cJjjEUJvgbAbfslAu62Dli20hFYC7QgBy09p94Yd5yB+J3IN8wUzVriM+UxexDQoIlhlarMTUkAKMYPSNn4J+p9hLlDW0iSmLEuiNSw7398AzY1y2UtnLEAfaHjptrJiOOcrWhB033U702rzOxMbwpPFssxMPdNtxN2ab4oS/LiF/Z0BZrMI3UkIgSV5vXQj5RT2khcWB6yjYwAFt2pSXvQDKN7LpOt6EatbBQJedaGDTmFdwU5wO5mLEe4eqpOKjMl9XzaCBCrCx1kh65Q4H7TvHzQMmVAH8lk+L+Jhb04cLwioSBo6hi3J08ATJqqFiU06iSWABo/1U2pkbbppoGvKYP96miRCicORxqoog0P+l23pWUW0LQqzEoEZb7jDVdE+R2102AtevrD/2P/MP2eRDJXf2hVwnlLnZiYSGKIy0Vdr5SPY1vTOxKRpgJMDk4QFPO8+Jou+UCarfnxDVSSK7WT6loXgtkmAofQIze7egjKomDFBuZhvF4Zfh5fpPghSoFKq6WjG1fk5lXw0UqmVz0=
+        file: multi-geth-$TRAVIS_OS_NAME-$TRAVIS_TAG.*
         file_glob: true
         draft: true
         on:
-          repo: ellaism/multi-geth
+          repo: ethereumsocial/multi-geth
           tags: true
         skip_cleanup: true
         tag_name: "$TRAVIS_TAG"
@@ -43,12 +43,12 @@ matrix:
       deploy:
         provider: releases
         api_key:
-          secure: Aynh6/R/IRY1rJtfAbwn/yaMISVIYhfbZF0IlOtPUrLpMvmA9jTU7paPYG7bzluKSJwPiwIkdKzYfrkoaqZ1O0CCJzyQZ2EURfm3PPTI8gtVi9CRV0XYVfbKzpLmDmWVu8cJ1sJ5Js/9Vyg1FVBJTBVjjKJ/gXI7JOj+joZvsRSdQvHnR+lpxo0UPPbzXIlpb3I1Wputk3QTvBzihcIuHXy+TBWvvW3ZNNUAh8n552cIAUIAmhjhE18IifstjgfHF1oPqMgBOTVjmQcn8965RQWV+rTsuB76Z79syyns4EFAXFd4vQlMShfYCXKLGjKp9SAq3zNDvdUlMLo1t6leD0PDEAu6bZxKbor1Yhh/OBLAftaF5DuFpEU/bH/YTqWPa1YjIJzUULuD9hkj4dhOfDkHWEOZ7B+FoQeP7zZ6RD2Cw98U8MzsvLl3UoyDJNxC/bR8nCJSkQlezNsGnIlmlH+SoGwn+yVdtF5dC7SPo5qgCq0r/f0P2YAKhiqt6CcmEvbmH0jyMIu7nUB0YIwlK7vu+kauV0dAHYqIkP8qVVt0AcMtNinoGHLng34+dLNcA49z44duaX3nIdxjUh2EuQINdsWsK3/ewCaJkpQxX+pnmtaoOUB05eD+0twa9In7k0RjP4RBcjGR281g18EE6lBGIUhKq/uEoJOOT3WAaq4=
-        file: multi-geth-$TRAVIS_OS_NAME.*
+          secure: ezTmvpIS/KdiICZzKbEK9R8E8i0Vtey6p9qrLJZB9vbV4fFTHBrbixo7di71H2rtGrBDhWRZ9r0+6jxwcu/1JFvnNDfAanlzx7XOjbsbriLLJdCTytFVEa8G50U1I7lNRKGApwjoTNG0sL5u5cJjjEUJvgbAbfslAu62Dli20hFYC7QgBy09p94Yd5yB+J3IN8wUzVriM+UxexDQoIlhlarMTUkAKMYPSNn4J+p9hLlDW0iSmLEuiNSw7398AzY1y2UtnLEAfaHjptrJiOOcrWhB033U702rzOxMbwpPFssxMPdNtxN2ab4oS/LiF/Z0BZrMI3UkIgSV5vXQj5RT2khcWB6yjYwAFt2pSXvQDKN7LpOt6EatbBQJedaGDTmFdwU5wO5mLEe4eqpOKjMl9XzaCBCrCx1kh65Q4H7TvHzQMmVAH8lk+L+Jhb04cLwioSBo6hi3J08ATJqqFiU06iSWABo/1U2pkbbppoGvKYP96miRCicORxqoog0P+l23pWUW0LQqzEoEZb7jDVdE+R2102AtevrD/2P/MP2eRDJXf2hVwnlLnZiYSGKIy0Vdr5SPY1vTOxKRpgJMDk4QFPO8+Jou+UCarfnxDVSSK7WT6loXgtkmAofQIze7egjKomDFBuZhvF4Zfh5fpPghSoFKq6WjG1fk5lXw0UqmVz0=
+        file: multi-geth-$TRAVIS_OS_NAME-$TRAVIS_TAG.*
         file_glob: true
         draft: true
         on:
-          repo: ellaism/multi-geth
+          repo: ethereumsocial/multi-geth
           tags: true
         skip_cleanup: true
         tag_name: "$TRAVIS_TAG"

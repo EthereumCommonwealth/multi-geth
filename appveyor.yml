@@ -25,9 +25,7 @@ install:
 
 build_script:
   - go run build\ci.go install
-  - 7z a multi-geth-win64.zip .\build\bin\geth.exe
-  - ps: Get-FileHash multi-geth-win64.zip -Algorithm SHA256
-  - ps: Get-FileHash multi-geth-win64.zip -Algorithm SHA256 | Out-File multi-geth-win64.zip.sha256
+  - 7z a multi-geth-win64-%APPVEYOR_REPO_TAG_NAME%.zip .\build\bin\geth.exe
 
 test_script:
   - set CGO_ENABLED=1
@@ -36,13 +34,11 @@ test_script:
 artifacts:
   - path: '*.zip'
     name: geth
-  - path: '*.zip.sha256'
-    name: geth-sha256
 
 deploy:
-  artifact: /multi-geth-win64\.zip.*/
+  artifact: /multi-geth-win64-%APPVEYOR_REPO_TAG_NAME%\.zip.*/
   auth_token:
-    secure: Or4bHgwveQXAjhl+UM1iRUsy5/zbcrk3lUDFFl0nOUyhyuf5PZuvBaEdR2bRW6nv
+    secure: OzaYbBXj6g9odl/p+gGOXOBrT9AXCmNWxeyyDetSY66CWMxEzgUT2fO/Hr0ODFxe
   draft: true
   on:
     appveyor_repo_tag: true
