@@ -112,6 +112,7 @@ var (
 		utils.TestnetFlag,
 		utils.EllaismFlag,
 		utils.ClassicFlag,
+		utils.SocialFlag,
 		utils.RinkebyFlag,
 		utils.VMEnableDebugFlag,
 		utils.NetworkIdFlag,
