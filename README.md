@@ -2,14 +2,14 @@
 
 A distribution of go-ethereum with support of multiple Ethereum-like networks.
 
+[![Discord](https://discordapp.com/api/guilds/417146776974262273/widget.png)](https://discord.gg/h6vsEuw)
 [![API Reference](
 https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f676f6c616e672f6764646f3f7374617475732e737667
 )](https://godoc.org/github.com/ethereum/go-ethereum)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ellaism/multi-geth)](https://goreportcard.com/report/github.com/ellaism/multi-geth)
-[![Travis](https://travis-ci.org/ellaism/multi-geth.svg?branch=master)](https://travis-ci.org/ellaism/multi-geth)
-[![Discord](https://img.shields.io/discord/422738190646902786.svg)](https://discord.gg/gz9tURY)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ethereumsocial/multi-geth)](https://goreportcard.com/report/github.com/ethereumsocial/multi-geth)
+[![Travis](https://travis-ci.org/ethereumsocial/multi-geth.svg?branch=master)](https://travis-ci.org/ethereumsocial/multi-geth)
 
-Binary archives are published at https://github.com/ellaism/multi-geth/releases.
+Binary archives are published at https://github.com/ethereumsocial/multi-geth/releases.
 
 ## Building the source
 
@@ -27,11 +27,11 @@ or, to build the full suite of utilities:
 
     make all
 
-## Ellaism network
+## Ethereum Social (ETSC) network
 
-The current version by default connect to Ethereum network, to get on Ellaism network, pass the `--ellaism` flag. For example:
+The current version by default connect to Ethereum network, to get on Ethereum Social network, pass the `--social` flag. For example:
 
-    geth --ellaism
+    geth --social
 
 ## Executables
 
