@@ -59,6 +59,15 @@ func EthersocialGenesis() string {
 	return string(enc)
 }
 
+// CallistoGenesis returns the JSON spec to use for the Callisto network.
+func CallistoGenesis() string {
+	enc, err := json.Marshal(core.DefaultCallistoGenesisBlock())
+	if err != nil {
+		panic(err)
+	}
+	return string(enc)
+}
+
 // TestnetGenesis returns the JSON spec to use for the Ethereum test network.
 func TestnetGenesis() string {
 	enc, err := json.Marshal(core.DefaultTestnetGenesisBlock())

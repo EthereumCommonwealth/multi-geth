@@ -211,14 +211,16 @@ func (g *Genesis) configOrDefault(ghash common.Hash) *params.ChainConfig {
 		return g.Config
 	case ghash == params.MainnetGenesisHash:
 		return params.MainnetChainConfig
-	case ghash == params.EthersocialGenesisHash:
-		return params.EthersocialChainConfig
 	case ghash == params.TestnetGenesisHash:
 		return params.TestnetChainConfig
 	case ghash == params.EllaismGenesisHash:
 		return params.EllaismChainConfig
 	case ghash == params.SocialGenesisHash:
 		return params.SocialChainConfig
+	case ghash == params.EthersocialGenesisHash:
+		return params.EthersocialChainConfig
+	case ghash == params.CallistoGenesisHash:
+		return params.CallistoChainConfig
 	default:
 		return params.AllEthashProtocolChanges
 	}
@@ -351,7 +353,7 @@ func DefaultSocialGenesisBlock() *Genesis {
 	}
 }
 
-// EthersocialGenesisBlock returns the Ethereum main net genesis block.
+// EthersocialGenesisBlock returns the Ethersocial main net genesis block.
 func DefaultEthersocialGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.EthersocialChainConfig,
@@ -360,6 +362,21 @@ func DefaultEthersocialGenesisBlock() *Genesis {
 		GasLimit:   3141592,
 		Difficulty: big.NewInt(131072),
 		Alloc:      decodePrealloc(ethersocialAllocData),
+	}
+}
+
+// DefaultCallistoGenesisBlock
+func DefaultCallistoGenesisBlock() *Genesis {
+	return &Genesis{
+		Config:     params.CallistoChainConfig,
+		ExtraData:  hexutil.MustDecode("0x0000000000000000000000000000000000000000000000000000000000000000"),
+		GasLimit:   10400000,
+		Difficulty: big.NewInt(524288),
+		Timestamp:  1519622213,
+		Nonce:      0,
+		Coinbase:   common.HexToAddress("0xc3F70b10CE5EC4aA47ce44Eb0B7900A883cd45Dd"),
+		Mixhash:    common.HexToHash("0x0000000000000000000000000000000000000000000000000000000000000000"),
+		Alloc:      decodePrealloc(callistoAllocData),
 	}
 }
 
