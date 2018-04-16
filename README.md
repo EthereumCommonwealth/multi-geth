@@ -118,7 +118,22 @@ This command will:
  * Start geth in fast sync mode and start up geth's built-in interactive JavaScript console,
    connecting to Ethereum Social network.
  * Default data directory will be `~/.ethereum/social`.
- * If you want to use console externally, connect geth via geth attach ipc://<home dir>/.ethereum/social/geth.ipc
+ * If you want to use console externally, connect geth via geth --social attach
+ 
+### Full node on the main [Callisto](https://callisto.network) network
+
+To get on Callisto network and take advantage of fast-sync:
+
+```
+$ geth --callisto console
+```
+
+This command will:
+
+ * Start geth in fast sync mode and start up geth's built-in interactive JavaScript console,
+   connecting to Callisto network.
+ * Default data directory will be `~/.ethereum/callisto`.
+ * If you want to use console externally, connect geth via geth --callisto attach
 
 ### All networks
 
@@ -129,6 +144,7 @@ For a full list of networks supported by multi-geth, take a look at the command-
 --ellaism                            Ellaism network: pre-configured Ellaism mainnet
 --classic                            Ethereum Classic network: pre-configured Ethereum Classic mainnet
 --social                             Ethereum Social network: pre-configured Ethereum Social mainnet
+--callisto                           Callisto network: pre-configured Callisto mainnet
 --rinkeby                            Rinkeby network: pre-configured proof-of-authority test network
 ```
 
