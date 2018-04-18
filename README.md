@@ -2,6 +2,7 @@
 
 A distribution of go-ethereum with support of multiple Ethereum-like networks.
 
+[![Github All Releases](https://img.shields.io/github/downloads/ethereumsocial/multi-geth/total.svg)]()
 [![Discord](https://discordapp.com/api/guilds/417146776974262273/widget.png)](https://discord.gg/h6vsEuw)
 [![API Reference](
 https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f676f6c616e672f6764646f3f7374617475732e737667
