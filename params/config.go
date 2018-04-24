@@ -68,7 +68,7 @@ var (
 		Ethash:              new(EthashConfig),
 	}
 
-	// ClassicChainConfig is the chain parameters to run a node on the Ellaism main network.
+	// ClassicChainConfig is the chain parameters to run a node on the Ethereum Classic main network.
 	ClassicChainConfig = &ChainConfig{
 		ChainID:             big.NewInt(61),
 		HomesteadBlock:      big.NewInt(1150000),
