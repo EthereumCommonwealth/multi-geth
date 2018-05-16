@@ -149,10 +149,6 @@ var (
 		Name:  "social",
 		Usage: "Ethereum Social network: pre-configured Ethereum Social mainnet",
 	}
-	EthersocialFlag = cli.BoolFlag{
-		Name:  "ethersocial",
-		Usage: "Ethersocial network: pre-configured Ethersocial mainnet",
-	}
 	CallistoFlag = cli.BoolFlag{
 		Name:  "callisto",
 		Usage: "Callisto network: pre-configured Callisto mainnet",
@@ -608,9 +604,6 @@ func MakeDataDir(ctx *cli.Context) string {
 		if ctx.GlobalBool(SocialFlag.Name) {
 			return filepath.Join(path, "social")
 		}
-		if ctx.GlobalBool(EthersocialFlag.Name) {
-			return filepath.Join(path, "ethersocial")
-		}
 		if ctx.GlobalBool(CallistoFlag.Name) {
 			return filepath.Join(path, "callisto")
 		}
@@ -675,8 +668,6 @@ func setBootstrapNodes(ctx *cli.Context, cfg *p2p.Config) {
 		urls = params.ClassicBootnodes
 	case ctx.GlobalBool(SocialFlag.Name):
 		urls = params.SocialBootnodes
-	case ctx.GlobalBool(EthersocialFlag.Name):
-		urls = params.EthersocialBootnodes
 	case ctx.GlobalBool(CallistoFlag.Name):
 		urls = params.CallistoBootnodes
 	case ctx.GlobalBool(RinkebyFlag.Name):
@@ -970,8 +961,6 @@ func SetNodeConfig(ctx *cli.Context, cfg *node.Config) {
 		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "classic")
 	case ctx.GlobalBool(SocialFlag.Name):
 		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "social")
-	case ctx.GlobalBool(EthersocialFlag.Name):
-		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "ethersocial")
 	case ctx.GlobalBool(CallistoFlag.Name):
 		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "callisto")
 	case ctx.GlobalBool(RinkebyFlag.Name):
@@ -1103,7 +1092,7 @@ func SetShhConfig(ctx *cli.Context, stack *node.Node, cfg *whisper.Config) {
 // SetEthConfig applies eth-related command line flags to the config.
 func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *eth.Config) {
 	// Avoid conflicting network flags
-	checkExclusive(ctx, DeveloperFlag, TestnetFlag, RinkebyFlag, EllaismFlag, ClassicFlag, SocialFlag, EthersocialFlag, CallistoFlag)
+	checkExclusive(ctx, DeveloperFlag, TestnetFlag, RinkebyFlag, EllaismFlag, ClassicFlag, SocialFlag, CallistoFlag)
 	checkExclusive(ctx, FastSyncFlag, LightModeFlag, SyncModeFlag)
 	checkExclusive(ctx, LightServFlag, LightModeFlag)
 	checkExclusive(ctx, LightServFlag, SyncModeFlag, "light")
@@ -1184,11 +1173,6 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *eth.Config) {
 			cfg.NetworkId = 28
 		}
 		cfg.Genesis = core.DefaultSocialGenesisBlock()
-	case ctx.GlobalBool(EthersocialFlag.Name):
-		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 1
-		}
-		cfg.Genesis = core.DefaultEthersocialGenesisBlock()
 	case ctx.GlobalBool(CallistoFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
 			cfg.NetworkId = 1
@@ -1349,8 +1333,6 @@ func MakeGenesis(ctx *cli.Context) *core.Genesis {
 		genesis = core.DefaultClassicGenesisBlock()
 	case ctx.GlobalBool(SocialFlag.Name):
 		genesis = core.DefaultSocialGenesisBlock()
-	case ctx.GlobalBool(EthersocialFlag.Name):
-		genesis = core.DefaultEthersocialGenesisBlock()
 	case ctx.GlobalBool(CallistoFlag.Name):
 		genesis = core.DefaultCallistoGenesisBlock()
 	case ctx.GlobalBool(RinkebyFlag.Name):

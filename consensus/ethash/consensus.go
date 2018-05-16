@@ -39,7 +39,6 @@ var (
 	FrontierBlockReward      *big.Int = big.NewInt(5e+18)                                    // Block reward in wei for successfully mining a block
 	ByzantiumBlockReward     *big.Int = big.NewInt(3e+18)                                    // Block reward in wei for successfully mining a block upward from Byzantium
 	SocialBlockReward        *big.Int = new(big.Int).Mul(big.NewInt(50), big.NewInt(1e+18))  // Block reward in wei for successfully mining a block upward for Ethereum Social
-	ethersocialBlockReward   *big.Int = big.NewInt(9e+18)                                    // Block reward in wei for successfully mining a block upward for Ethersocial Network
 	CLOMinerReward           *big.Int = new(big.Int).Mul(big.NewInt(420), big.NewInt(1e+18)) // Block reward in wei for successfully mining a block upward for Callisto Network
 	CLOTreasuryReward        *big.Int = new(big.Int).Mul(big.NewInt(120), big.NewInt(1e+18)) // Block reward in wei for successfully mining a block upward for Callisto Network
 	CLOStakeReward           *big.Int = new(big.Int).Mul(big.NewInt(60), big.NewInt(1e+18))  // Block reward in wei for successfully mining a block upward for Callisto Network
@@ -671,10 +670,6 @@ func (ethash *Ethash) Prepare(chain consensus.ChainReader, header *types.Header)
 		// setup accumulateRewards for Ethereum Social
 		accumulateRewards = socialAccumulateRewards
 	}
-	if chain.GetHeaderByNumber(0).Hash() == params.EthersocialGenesisHash {
-		// setup accumulateRewards for Ethersocial Network
-		accumulateRewards = ethersocialAccumulateRewards
-	}
 	if chain.GetHeaderByNumber(0).Hash() == params.CallistoGenesisHash {
 		// setup accumulateRewards for Callisto Network
 		accumulateRewards = callistoAccumulateRewards
@@ -852,29 +847,6 @@ func GetBlockEra(blockNum, eraLength *big.Int) *big.Int {
 	dremainder := big.NewInt(0).Mod(d, big.NewInt(1))
 
 	return new(big.Int).Sub(d, dremainder)
-}
-
-// ethersocialAccumulateRewards()
-func ethersocialAccumulateRewards(config *params.ChainConfig, state *state.StateDB, header *types.Header, uncles []*types.Header) {
-	// Select the correct block reward based on chain progression
-	blockReward := ethersocialBlockReward
-	if config.IsByzantium(header.Number) {
-		blockReward = FrontierBlockReward
-	}
-	// Accumulate the rewards for the miner and any included uncles
-	reward := new(big.Int).Set(blockReward)
-	r := new(big.Int)
-	for _, uncle := range uncles {
-		r.Add(uncle.Number, big8)
-		r.Sub(r, header.Number)
-		r.Mul(r, blockReward)
-		r.Div(r, big8)
-		state.AddBalance(uncle.Coinbase, r)
-
-		r.Div(blockReward, big32)
-		reward.Add(reward, r)
-	}
-	state.AddBalance(header.Coinbase, reward)
 }
 
 // callistoAccumulateRewards()

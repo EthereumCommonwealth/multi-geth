@@ -50,15 +50,6 @@ func SocialGenesis() string {
 	return string(enc)
 }
 
-// EthersocialGenesis returns the JSON spec to use for the Ethersocial network.
-func EthersocialGenesis() string {
-	enc, err := json.Marshal(core.DefaultEthersocialGenesisBlock())
-	if err != nil {
-		panic(err)
-	}
-	return string(enc)
-}
-
 // CallistoGenesis returns the JSON spec to use for the Callisto network.
 func CallistoGenesis() string {
 	enc, err := json.Marshal(core.DefaultCallistoGenesisBlock())
