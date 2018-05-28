@@ -29,7 +29,7 @@ or, to build the full suite of utilities:
 
 The current version by default connect to Ethereum network, to get on Ethereum Social network, pass the `--social` flag. For example:
 
-    geth --social
+    geth or geth --social
 
 ## Executables
 
@@ -61,7 +61,7 @@ the user doesn't care about years-old historical data, so we can fast-sync quick
 state of the network. To do so:
 
 ```
-$ geth console
+$ geth --foundation console
 ```
 
 This command will:
@@ -74,20 +74,6 @@ This command will:
    as well as Geth's own [management APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs).
    This too is optional and if you leave it out you can always attach to an already running Geth instance
    with `geth attach`.
-
-### Full node on the main Ellaism network
-
-To get on Ellaism network and take advantage of fast-sync:
-
-```
-$ geth --ellaism console
-```
-
-This command will:
-
- * Start geth in fast sync mode and start up geth's built-in interactive JavaScript console,
-   connecting to Ellaism network.
- * Default data directory will be `~/.ethereum/ellaism`.
 
 ### Full node on the main Ethereum Classic network
 
@@ -117,7 +103,7 @@ This command will:
    connecting to Ethereum Social network.
  * Default data directory will be `~/.ethereum/social`.
  * If you want to use console externally, connect geth via geth --social attach
- 
+
 ### Full node on the main [Callisto](https://callisto.network) network
 
 To get on Callisto network and take advantage of fast-sync:
