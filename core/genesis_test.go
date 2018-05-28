@@ -73,8 +73,8 @@ func TestSetupGenesis(t *testing.T) {
 			fn: func(db ethdb.Database) (*params.ChainConfig, common.Hash, error) {
 				return SetupGenesisBlock(db, nil)
 			},
-			wantHash:   params.MainnetGenesisHash,
-			wantConfig: params.MainnetChainConfig,
+			wantHash:   params.SocialGenesisHash,
+			wantConfig: params.SocialChainConfig,
 		},
 		{
 			name: "mainnet block in DB, genesis == nil",
