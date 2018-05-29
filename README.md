@@ -125,7 +125,7 @@ For a full list of networks supported by multi-geth, take a look at the command-
 
 ```
 --testnet                            Ropsten network: pre-configured proof-of-work test network
---ellaism                            Ellaism network: pre-configured Ellaism mainnet
+--foundation                         Ethereum network: pre-configured Ethereum mainnet
 --classic                            Ethereum Classic network: pre-configured Ethereum Classic mainnet
 --social                             Ethereum Social network: pre-configured Ethereum Social mainnet
 --callisto                           Callisto network: pre-configured Callisto mainnet
