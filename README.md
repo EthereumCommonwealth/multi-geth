@@ -9,6 +9,14 @@ A distribution of go-ethereum with support of multiple Ethereum-like networks.
 
 Binary archives are published at https://github.com/ethereumsocial/multi-geth/releases.
 
+## Deprecation Warning
+
+Ethereum Social ver Multi-Geth is now being deprecated and it will be switched to a brand new [ethereumsocial](https://github.com/ethereumsocial/ethereumsocial) node distribution
+
+which allows multiple ethereum based network support on geth node.
+
+Also multi-geth & ethereumsocial no longer support ellaism network due to it's compatiblities, please upgrade to parity before the ellaism hardfork!
+
 ## Building the source
 
 For prerequisites and detailed build instructions please read the
