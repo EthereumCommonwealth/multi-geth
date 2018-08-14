@@ -128,8 +128,6 @@ func remoteConsole(ctx *cli.Context) error {
 				path = filepath.Join(path, "rinkeby")
 			} else if ctx.GlobalBool(utils.FoundationFlag.Name) {
 				path = filepath.Join(path, "foundation")
-			} else if ctx.GlobalBool(utils.EllaismFlag.Name) {
-				path = filepath.Join(path, "ellaism")
 			} else if ctx.GlobalBool(utils.ClassicFlag.Name) {
 				path = filepath.Join(path, "classic")
 			} else if ctx.GlobalBool(utils.SocialFlag.Name) {
